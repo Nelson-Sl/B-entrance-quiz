@@ -35,4 +35,23 @@ class GtbEntranceQuizApplicationTests {
 				.andExpect(jsonPath("$[34].name",is("凌凤仪")));
 	}
 
+	@Test
+	void getRandomTeamData() throws Exception {
+		mockMvc.perform(get("/randomTeams"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$",hasSize(6)))
+				.andExpect(jsonPath("$[0].teamName",is("Team 1")))
+				.andExpect(jsonPath("$[0].teamMembers",hasSize(6)))
+				.andExpect(jsonPath("$[1].teamName",is("Team 2")))
+				.andExpect(jsonPath("$[1].teamMembers",hasSize(6)))
+				.andExpect(jsonPath("$[2].teamName",is("Team 3")))
+				.andExpect(jsonPath("$[2].teamMembers",hasSize(6)))
+				.andExpect(jsonPath("$[3].teamName",is("Team 4")))
+				.andExpect(jsonPath("$[3].teamMembers",hasSize(6)))
+				.andExpect(jsonPath("$[4].teamName",is("Team 5")))
+				.andExpect(jsonPath("$[4].teamMembers",hasSize(6)))
+				.andExpect(jsonPath("$[5].teamName",is("Team 6")))
+				.andExpect(jsonPath("$[5].teamMembers",hasSize(5)));
+	}
+
 }
