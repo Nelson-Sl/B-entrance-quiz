@@ -17,4 +17,8 @@ public class StudentListService {
     public Team[] getRandomTeams() {
         return TeamData.getRandomTeams();
     }
+
+    public void addNewStudent(String studentName) {
+        StudentData.addStudentInClass(studentName);
+    }
 }

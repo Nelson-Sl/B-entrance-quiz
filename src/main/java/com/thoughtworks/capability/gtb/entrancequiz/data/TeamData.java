@@ -39,7 +39,7 @@ public class TeamData {
             int teamChosenTime = round == randomRound - 1 ? shuffleStudentList.size() % teamList.length : teamList.length;
             for(int team = 0; team < teamChosenTime; team++) {
                 if(round == 0) {
-                    teamList[team].setTeamMembers(new ArrayList<Student>());
+                    teamList[team].setTeamMembers(new ArrayList<>());
                 }
                 teamList[team].getTeamMembers().add(shuffleStudentList.get(round * teamList.length + team));
             }
